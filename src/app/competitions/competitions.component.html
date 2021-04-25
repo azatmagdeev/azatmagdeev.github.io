@@ -1,3 +1,7 @@
-<p>{{user?.name}}</p>
-<p>{{user?.age}}</p>
+<p>Всего: {{data.count}}</p>
+<ul>
+  <li *ngFor="let competition of data.competitions">
+    <p>{{competition.name}} [{{competition.area.name}}]</p>
+  </li>
+</ul>
 

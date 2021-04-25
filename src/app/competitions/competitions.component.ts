@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {User} from '../user';
+import {Data} from './data-schema';
 
 @Component({
   selector: 'app-competitions',
@@ -9,13 +9,13 @@ import {User} from '../user';
 })
 export class CompetitionsComponent implements OnInit {
 
-  user: User;
+  data: Data;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('assets/user.json').subscribe(
-      (data: User) => this.user = data
+    this.http.get('assets/competitions.json').subscribe(
+      (data: Data) => this.data = data
     );
   }
 
