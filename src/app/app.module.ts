@@ -2,10 +2,10 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule, Routes} from '@angular/router';
 
-import {AppComponent} from './app.component';
-import {AboutComponent} from './about.component';
-import {HomeComponent} from './home.component';
-import {NotFoundComponent} from './not-found.component';
+import {AppComponent} from './app/app.component';
+import {AboutComponent} from './about/about.component';
+import {HomeComponent} from './home/home.component';
+import {NotFoundComponent} from './not-found/not-found.component';
 import { CompetitionsComponent } from './competitions/competitions.component';
 import {HttpClientModule} from '@angular/common/http';
 
