@@ -6,17 +6,20 @@ import {AppComponent} from './app.component';
 import {AboutComponent} from './about.component';
 import {HomeComponent} from './home.component';
 import {NotFoundComponent} from './not-found.component';
+import { CompetitionsComponent } from './competitions/competitions.component';
+import {HttpClientModule} from '@angular/common/http';
 
 // определение маршрутов
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'about', component: AboutComponent},
+  {path: 'competitions', component: CompetitionsComponent},
   {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
-  declarations: [AppComponent, HomeComponent, AboutComponent, NotFoundComponent],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes), HttpClientModule],
+  declarations: [AppComponent, HomeComponent, AboutComponent, NotFoundComponent, CompetitionsComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
