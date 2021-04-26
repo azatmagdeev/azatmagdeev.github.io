@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Data} from './data-schema';
+import {Data} from './schemas';
 
 @Component({
   selector: 'app-competitions',
@@ -14,7 +14,7 @@ export class CompetitionsComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('assets/competitions.json').subscribe(
+    this.http.get('assets/competitions-of-europe.json').subscribe(
       (data: Data) => this.data = data
     );
   }

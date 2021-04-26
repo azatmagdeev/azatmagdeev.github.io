@@ -1,7 +1,10 @@
+<h1>Европейские турниры по футболу</h1>
 <p>Всего: {{data.count}}</p>
 <ul>
   <li *ngFor="let competition of data.competitions">
-    <p>{{competition.name}} [{{competition.area.name}}]</p>
+    <a href="/competitions/{{competition.id}}">
+      <p>{{competition.name}} [{{competition.area.name}}]</p>
+    </a>
   </li>
 </ul>
 
