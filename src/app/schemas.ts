@@ -21,9 +21,9 @@ export type Competition = {
 
 type Area = {
   id: number;
-    name: string;
-    countryCode: string;
-    ensignUrl: string | null;
+  name: string;
+  countryCode: string;
+  ensignUrl: string | null;
 };
 
 type Season = {
@@ -31,8 +31,37 @@ type Season = {
   startDate: string; // '2020-09-11',
   endDate: string; // '2021-05-21',
   currentMatchday: number;
-  // winner: null // Team?
+  winner: Team;
 };
+
+export type Teams = {
+  count: number;
+  filters: {
+    season: string;
+    stage: string;
+  };
+  competition: Competition;
+  season: Season;
+  teams: Team[];
+};
+
+export type Team = {
+  id: number;
+  area: Area;
+  name: string;
+  shortName: string;
+  tla: string;
+  crestUrl: string;
+  address: string;
+  phone: string;
+  website: string;
+  email: string;
+  founded: number;
+  clubColors: string;
+  venue: string;
+  lastUpdated: string
+};
+
 
 // "winner": {
 //   "id": 7522,

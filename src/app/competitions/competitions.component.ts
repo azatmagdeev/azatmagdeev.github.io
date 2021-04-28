@@ -14,7 +14,10 @@ export class CompetitionsComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('assets/competitionsTierOne.json').subscribe(
+    this.http.get(
+      'https://api.football-data.org/v2/competitions?area=2077&plan=TIER_ONE',
+      {headers: { 'X-Auth-Token' : 'edc03d7baf3c447dae90491ed7246598'}}
+    ).subscribe(
       (data: Competitions) => this.data = data
     );
   }

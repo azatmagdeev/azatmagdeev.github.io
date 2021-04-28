@@ -1,0 +1,75 @@
+<style>
+  .title{
+    text-align: center;
+  }
+  .card {
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 1em;
+    margin: 1em;
+    display: flex;
+    /*gap: 1em;*/
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .card img{
+    width:100%;
+    max-width: 450px;
+
+  }
+</style>
+<div *ngIf="!data">
+  <h1>Loading...</h1>
+</div>
+<div class="title" *ngIf="data">
+  <h1>{{data?.competition?.name}}</h1>
+  <h2>teams: {{count}}</h2>
+</div>
+<div class="card" *ngFor="let team of teams">
+  <div *ngIf="team.crestUrl">
+    <img src="{{team.crestUrl}}" alt="">
+  </div>
+  <div>
+    <h2>{{team.shortName}} ({{team.area.name}})</h2>
+    <p>{{team.name}} [{{team.tla}}]</p>
+    <hr>
+    <p>founded in {{team.founded}}</p>
+    <p>club colors: {{team.clubColors}}</p>
+    <p>venue: {{team.venue}}</p>
+    <hr>
+    <h3>Contacts:</h3>
+    <ul>
+      <li>{{team.phone}}</li>
+      <li>{{team.email}}</li>
+      <li>{{team.website}}</li>
+      <li>{{team.address}}</li>
+    </ul>
+    <hr>
+    <p>last update: {{team.lastUpdated}}</p>
+
+<!--    <pre>-->
+<!--      {{team|json}}-->
+<!--    </pre>-->
+  </div>
+</div>
+
+<!--{-->
+<!--"id": 512,-->
+<!--"area": {-->
+<!--"id": 2081,-->
+<!--"name": "France"-->
+<!--},-->
+<!--"name": "Stade Brestois 29",-->
+<!--"shortName": "Brest",-->
+<!--"tla": "SBR",-->
+<!--"crestUrl": "https://crests.football-data.org/512.svg",-->
+<!--"address": "Port de Plaisance, 470 bis rue Alain Colas Brest 29200",-->
+<!--"phone": "+33 (0298) 022030",-->
+<!--"website": "http://www.stade-brestois.com",-->
+<!--"email": "daniel.leroux.sb29@hotmail.fr",-->
+<!--"founded": 1903,-->
+<!--"clubColors": "White / Red",-->
+<!--"venue": "Stade Francis-Le Blé",-->
+<!--"lastUpdated": "2021-02-06T18:01:15Z"-->
