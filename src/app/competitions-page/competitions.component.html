@@ -1,0 +1,94 @@
+<style>
+  h1 {
+    text-align: center;
+  }
+
+  .card-desk {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  .card {
+    border-top: 1px black solid;
+    border-right: 1px black solid;
+    border-bottom: 5px dodgerblue solid;
+    border-left: 1px black solid;
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    max-width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .emblem {
+    width: 100px;
+  }
+
+  .flag {
+    height: 1em;
+    margin-left: .5rem;
+  }
+
+  h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p {
+    margin: 0;
+  }
+</style>
+<h1 *ngIf="!data">Loading...</h1>
+<main *ngIf="data">
+  <h1>Most popular football competitions</h1>
+  <div class="card-desk">
+    <div class="card" *ngFor="let competition of data?.competitions">
+      <a href="/competitions/{{competition.id}}">
+        <h2>
+          {{competition.name}}
+        </h2>
+      </a>
+      <h3>
+        |{{competition.code}}|
+        {{competition.area.name}}
+        <img class="flag" *ngIf="competition.area.ensignUrl" src="{{competition.area.ensignUrl}}" alt="">
+      </h3>
+
+      <p *ngIf="competition.emblemUrl">
+        <img class="emblem" src="{{competition.emblemUrl}}" alt="">
+      </p>
+
+      <h3>
+        Current Season
+      </h3>
+      <p>
+        start date: {{competition.currentSeason.startDate}}
+      </p>
+      <p>
+        end date: {{competition.currentSeason.endDate}}
+      </p>
+      <p>
+        current Matchday: {{competition.currentSeason.currentMatchday}}
+      </p>
+      <p *ngIf="competition.currentSeason.winner">
+        winner: {{competition.currentSeason.winner.name}}
+      </p>
+      <hr>
+
+      <p>
+        Available Seasons: {{competition.numberOfAvailableSeasons}}
+      </p>
+      <hr>
+      <p>
+        last update: {{competition.lastUpdated}}
+      </p>
+    </div>
+  </div>
+</main>
+
+

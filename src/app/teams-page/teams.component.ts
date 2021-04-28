@@ -8,7 +8,7 @@ import {Team, Teams} from '../schemas';
   templateUrl: './teams.component.html',
   styleUrls: ['./teams.component.css']
 })
-export class TeamsComponent implements OnInit {
+export class TeamsPageComponent implements OnInit {
   data: Teams;
   id: number;
   count: number;

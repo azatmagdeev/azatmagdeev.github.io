@@ -29,12 +29,15 @@
   <h2>teams: {{count}}</h2>
 </div>
 
+
 <div class="card" *ngFor="let team of teams">
   <div *ngIf="team.crestUrl">
     <img src="{{team.crestUrl}}" alt="">
   </div>
   <div>
-    <h2>{{team.shortName}} ({{team.area.name}})</h2>
+    <a href="/teams/{{team.id}}">
+      <h2>{{team.shortName}} ({{team.area.name}})</h2>
+    </a>
     <p>{{team.name}} [{{team.tla}}]</p>
     <hr>
     <p>founded in {{team.founded}}</p>

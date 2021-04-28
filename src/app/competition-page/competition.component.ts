@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Competition} from '../schemas';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -8,9 +8,9 @@ import {ActivatedRoute} from '@angular/router';
   templateUrl: './competition.component.html',
   styleUrls: ['./competition.component.css']
 })
-export class CompetitionComponent implements OnInit {
+export class CompetitionPageComponent implements OnInit {
 
-  data: Competition;
+  competition: Competition;
   id: number;
 
   constructor(
@@ -21,14 +21,15 @@ export class CompetitionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get('https://api.football-data.org/v2/competitions/'
-      + this.id
-      , {
-        headers: { 'X-Auth-Token' : 'edc03d7baf3c447dae90491ed7246598'}
-    }).subscribe(
-      (data: Competition) => {
-        console.log(data);
-        this.data = data;
+    this.http.get(
+      'https://api.football-data.org/v2/competitions/'
+      + this.id,
+      {
+        headers: {'X-Auth-Token': 'edc03d7baf3c447dae90491ed7246598'}
+      }).subscribe(
+      (competition: Competition) => {
+        console.log(competition);
+        this.competition = competition;
       }
     );
   }

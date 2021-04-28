@@ -1,0 +1,96 @@
+<h2>{{id}}</h2>
+<h1>{{competition.name}} ({{competition.code}})</h1>
+
+<a href="/competitions/{{id}}/teams">
+  <p>Teams</p>
+</a>
+
+<a href="/competitions/{{competition.id}}">
+  <h2>
+    {{competition.name}}
+  </h2>
+</a>
+<h3>
+  |{{competition.code}}|
+  {{competition.area.name}}
+  <img class="flag" *ngIf="competition.area.ensignUrl" src="{{competition.area.ensignUrl}}" alt="">
+</h3>
+
+<p *ngIf="competition.emblemUrl">
+  <img class="emblem" src="{{competition.emblemUrl}}" alt="">
+</p>
+
+<h3>
+  Current Season
+</h3>
+<p>
+  start date: {{competition.currentSeason.startDate}}
+</p>
+<p>
+  end date: {{competition.currentSeason.endDate}}
+</p>
+<p>
+  current Matchday: {{competition.currentSeason.currentMatchday}}
+</p>
+<p *ngIf="competition.currentSeason.winner">
+  winner: {{competition.currentSeason.winner.name}}
+</p>
+<hr>
+
+<p>
+  Available Seasons: {{competition.numberOfAvailableSeasons}}
+</p>
+<hr>
+<p>
+  last update: {{competition.lastUpdated}}
+</p>
+
+<!--{
+"id": 2000,
+"area": {
+"id": 2267,
+"name": "World"
+},
+"name": "FIFA World Cup",
+"code": "WC",
+"emblemUrl": null,
+"plan": "TIER_ONE",
+"currentSeason": {
+"id": 1,
+"startDate": "2018-06-14",
+"endDate": "2018-07-15",
+"currentMatchday": 3,
+"winner": {
+"id": 773,
+"name": "France",
+"shortName": "France",
+"tla": "FRA",
+"crestUrl": "https://crests.football-data.org/773.svg"
+}
+},
+"seasons": [
+{
+"id": 1,
+"startDate": "2018-06-14",
+"endDate": "2018-07-15",
+"currentMatchday": 3,
+"winner": {
+"id": 773,
+"name": "France",
+"shortName": "France",
+"tla": "FRA",
+"crestUrl": "https://crests.football-data.org/773.svg"
+}
+},
+  {
+"id": 464,
+"startDate": "2014-06-12",
+"endDate": "2014-07-13",
+"currentMatchday": null,
+"winner": null
+}
+],
+"lastUpdated": "2020-09-10T13:58:14Z"
+}-->
+
+

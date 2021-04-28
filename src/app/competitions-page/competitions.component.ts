@@ -7,7 +7,7 @@ import {Competitions} from '../schemas';
   templateUrl: './competitions.component.html',
   styleUrls: ['./competitions.component.css']
 })
-export class CompetitionsComponent implements OnInit {
+export class CompetitionsPageComponent implements OnInit {
 
   data: Competitions;
 
