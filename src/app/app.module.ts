@@ -22,7 +22,11 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes), HttpClientModule],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
+  ],
   declarations: [
     AppComponent,
     HomeComponent,
