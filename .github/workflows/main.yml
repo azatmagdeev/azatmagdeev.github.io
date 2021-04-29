@@ -13,7 +13,7 @@
      - name: Use Node.js 10.x
        uses: actions/setup-node@v1
        with:
-         node-version: 10.x
+         node-version: 14.x
 
      - name: Prepare and deploy
        env:
@@ -28,4 +28,4 @@
          # npm run webdriver-update-ci
          # npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js --webdriver-update=false
          ####
-         npm run ng -- deploy --base-href=/everything-github-demo/ --name="Displayed Username" --email=your.mail@example.org
+         npm run ng -- deploy --base-href=/football/ --name="Displayed Username" --email=your.mail@example.org
