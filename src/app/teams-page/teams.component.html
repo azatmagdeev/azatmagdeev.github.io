@@ -3,6 +3,13 @@
     text-align: center;
   }
 
+  .card-desk {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /*justify-content: center;*/
+    /*flex-wrap: wrap;*/
+  }
+
   .card {
     background-color: white;
     border: 1px solid grey;
@@ -10,14 +17,19 @@
     padding: 1em;
     margin: 1em;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    max-width: 300px;
   }
 
   .card img {
-    width: 100%;
+    width: 50%;
     max-width: 450px;
+  }
 
+  .card p {
+    margin: 0;
   }
 </style>
 <div *ngIf="!data">
@@ -29,29 +41,31 @@
   <h2>teams: {{count}}</h2>
 </div>
 
+<div class="card-desk">
+  <div class="card" *ngFor="let team of teams">
 
-<div class="card" *ngFor="let team of teams">
-  <div *ngIf="team.crestUrl">
-    <img src="{{team.crestUrl}}" alt="">
-  </div>
-  <div>
-    <a href="/teams/{{team.id}}">
-      <h2>{{team.shortName}} ({{team.area.name}})</h2>
-    </a>
-    <p>{{team.name}} [{{team.tla}}]</p>
-    <hr>
-    <p>founded in {{team.founded}}</p>
-    <p>club colors: {{team.clubColors}}</p>
-    <p>venue: {{team.venue}}</p>
-    <hr>
-    <h3>Contacts:</h3>
-    <ul>
-      <li>{{team.phone}}</li>
-      <li>{{team.email}}</li>
-      <li>{{team.website}}</li>
-      <li>{{team.address}}</li>
-    </ul>
-    <hr>
-    <p>last update: {{team.lastUpdated}}</p>
+    <img *ngIf="team.crestUrl" src="{{team.crestUrl}}" alt="">
+
+    <div>
+      <a href="/teams/{{team.id}}">
+        <h2>{{team.shortName}} ({{team.area.name}})</h2>
+      </a>
+      <p>{{team.name}} [{{team.tla}}]</p>
+      <hr>
+      <p>founded in {{team.founded}}</p>
+      <p>club colors: {{team.clubColors}}</p>
+      <p>venue: {{team.venue}}</p>
+<!--      <hr>-->
+<!--      <h3>Contacts:</h3>-->
+<!--      <ul>-->
+<!--        <li>{{team.phone}}</li>-->
+<!--        <li>{{team.email}}</li>-->
+<!--        <li>{{team.website}}</li>-->
+<!--        <li>{{team.address}}</li>-->
+<!--      </ul>-->
+<!--      <hr>-->
+<!--      <p>last update: {{team.lastUpdated}}</p>-->
+    </div>
   </div>
 </div>
+
