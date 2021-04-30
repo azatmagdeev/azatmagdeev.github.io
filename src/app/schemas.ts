@@ -32,6 +32,7 @@ type Season = {
   endDate: string; // '2021-05-21',
   currentMatchday: number;
   winner: Team;
+  availableStages: string;
 };
 
 export type Teams = {
@@ -62,16 +63,32 @@ export type Team = {
   lastUpdated: string
 };
 
+export type Standings = {
+  filters: {
+    standingType: 'TOTAL' /*(default)*/ | 'HOME' | 'AWAY'
+  };
+  competition: Competition;
+  season: Season;
+  standings: Standing[]
+};
 
-// "winner": {
-//   "id": 7522,
-//     "name": "VfL Wolfsburg",
-//     "shortName": null,
-//     "tla": null,
-//     "crestUrl": null
-// }
+export type Position = {
+  position: number;
+  team: Team;
+  playedGames: number,
+  won: number,
+  draw: number,
+  lost: number;
+  points: number;
+  goalsFor: number;
+  goalsAgainst: number;
+  goalDifference: number;
+  form: string;
+};
 
-// {
-//   "message": "The resource you are looking for is restricted. Please pass a valid API token and check your subscription for permission.",
-//   "errorCode": 403
-// }
+export type Standing = {
+  stage: string;
+  type: string;
+  group: null | any; // todo: check!
+  table: Position[];
+};

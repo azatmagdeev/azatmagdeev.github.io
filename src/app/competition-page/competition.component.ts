@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Competition} from '../schemas';
+import {Competition, Position, Standings} from '../schemas';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
+import {config} from '../app-config';
 
 @Component({
   selector: 'app-competition',
@@ -12,6 +13,8 @@ export class CompetitionPageComponent implements OnInit {
 
   competition: Competition;
   id: number;
+  standings: Standings;
+  tableRow: Position;
 
   constructor(
     private http: HttpClient,
@@ -22,14 +25,21 @@ export class CompetitionPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get(
-      'https://api.football-data.org/v2/competitions/'
-      + this.id,
-      {
-        headers: {'X-Auth-Token': 'edc03d7baf3c447dae90491ed7246598'}
-      }).subscribe(
+      config.url + 'competitions/' + this.id,
+      {headers: config.header}
+    ).subscribe(
       (competition: Competition) => {
-        console.log(competition);
         this.competition = competition;
+      }
+    );
+
+    this.http.get(
+      config.url + 'competitions/' + this.id + '/standings',
+      {headers: config.header}
+    ).subscribe(
+      (standings: Standings) => {
+        console.log(standings);
+        this.standings = standings;
       }
     );
   }

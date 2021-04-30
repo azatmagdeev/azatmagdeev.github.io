@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Competitions} from '../schemas';
+import {config} from '../app-config';
 
 @Component({
   selector: 'app-competitions',
@@ -15,8 +16,8 @@ export class CompetitionsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get(
-      'https://api.football-data.org/v2/competitions?area=2077&plan=TIER_ONE',
-      {headers: { 'X-Auth-Token' : 'edc03d7baf3c447dae90491ed7246598'}}
+      config.url + 'competitions?area=2077&plan=TIER_ONE',
+      {headers: config.header}
     ).subscribe(
       (data: Competitions) => this.data = data
     );

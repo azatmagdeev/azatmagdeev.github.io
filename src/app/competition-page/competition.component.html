@@ -1,96 +1,118 @@
-<h2>{{id}}</h2>
-<h1>{{competition.name}} ({{competition.code}})</h1>
+<style>
+  .card {
+    background: white;
+    padding: 1em;
+    margin: 1em;
+  }
 
-<a href="/competitions/{{id}}/teams">
-  <p>Teams</p>
-</a>
+  .table-row {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 1rem;
+  }
 
-<a href="/competitions/{{competition.id}}">
-  <h2>
-    {{competition.name}}
-  </h2>
-</a>
-<h3>
-  |{{competition.code}}|
-  {{competition.area.name}}
-  <img class="flag" *ngIf="competition.area.ensignUrl" src="{{competition.area.ensignUrl}}" alt="">
-</h3>
+  .table-row span {
+    width: 20px;
+  }
 
-<p *ngIf="competition.emblemUrl">
-  <img class="emblem" src="{{competition.emblemUrl}}" alt="">
-</p>
+  .table-row .name {
+    display: flex;
+    justify-content: start;
+    gap: 1em;
+    width: 200px;
+  }
 
-<h3>
-  Current Season
-</h3>
-<p>
-  start date: {{competition.currentSeason.startDate}}
-</p>
-<p>
-  end date: {{competition.currentSeason.endDate}}
-</p>
-<p>
-  current Matchday: {{competition.currentSeason.currentMatchday}}
-</p>
-<p *ngIf="competition.currentSeason.winner">
-  winner: {{competition.currentSeason.winner.name}}
-</p>
-<hr>
+  .table-row .form {
+    width: 100px;
+  }
 
-<p>
-  Available Seasons: {{competition.numberOfAvailableSeasons}}
-</p>
-<hr>
-<p>
-  last update: {{competition.lastUpdated}}
-</p>
 
-<!--{
-"id": 2000,
-"area": {
-"id": 2267,
-"name": "World"
-},
-"name": "FIFA World Cup",
-"code": "WC",
-"emblemUrl": null,
-"plan": "TIER_ONE",
-"currentSeason": {
-"id": 1,
-"startDate": "2018-06-14",
-"endDate": "2018-07-15",
-"currentMatchday": 3,
-"winner": {
-"id": 773,
-"name": "France",
-"shortName": "France",
-"tla": "FRA",
-"crestUrl": "https://crests.football-data.org/773.svg"
-}
-},
-"seasons": [
-{
-"id": 1,
-"startDate": "2018-06-14",
-"endDate": "2018-07-15",
-"currentMatchday": 3,
-"winner": {
-"id": 773,
-"name": "France",
-"shortName": "France",
-"tla": "FRA",
-"crestUrl": "https://crests.football-data.org/773.svg"
-}
-},
-  {
-"id": 464,
-"startDate": "2014-06-12",
-"endDate": "2014-07-13",
-"currentMatchday": null,
-"winner": null
-}
-],
-"lastUpdated": "2020-09-10T13:58:14Z"
-}-->
+</style>
 
+
+<div *ngIf="competition" class="card">
+  <h1>{{competition?.name}} ({{competition?.code}})</h1>
+  <h3>
+    |{{competition.code}}|
+    {{competition.area.name}}
+    <img class="flag" *ngIf="competition.area.ensignUrl" src="{{competition.area.ensignUrl}}" alt="">
+  </h3>
+
+  <p *ngIf="competition.emblemUrl">
+    <img class="emblem" src="{{competition.emblemUrl}}" alt="">
+  </p>
+
+  <h3>
+    Current Season
+  </h3>
+  <p>
+    start date: {{competition.currentSeason.startDate}}
+  </p>
+  <p>
+    end date: {{competition.currentSeason.endDate}}
+  </p>
+  <p>
+    current Matchday: {{competition.currentSeason.currentMatchday}}
+  </p>
+  <p *ngIf="competition.currentSeason.winner">
+    winner: {{competition.currentSeason.winner.name}}
+  </p>
+  <hr>
+
+  <h3>
+    Seasons:
+  </h3>
+  <div *ngFor="let season of competition.seasons">
+    <p>
+      start date: {{season.startDate}}
+    </p>
+    <p>
+      end date: {{season.endDate}}
+    </p>
+    <p>
+      current Matchday: {{season.currentMatchday}}
+    </p>
+    <p *ngIf="season.winner">
+      winner: <a href="/teams/{{season.winner.id}}">{{season.winner.name}}</a>
+    </p>
+    ***
+  </div>
+  <hr>
+
+
+  <p>
+    last update: {{competition.lastUpdated}}
+  </p>
+  <hr>
+  <a href="/competitions/{{id}}/teams">
+    <p>Teams</p>
+  </a>
+</div>
+
+
+
+<div class="card" *ngFor="let standing of standings?.standings">
+  <h2>{{standing.stage}} {{standing.type}} {{standing.group}}</h2>
+  <div class="table-row" *ngFor="let row of standing.table">
+    <span>
+      {{row.position}}
+    </span>
+    <span class="name">
+      <a href="/teams/{{row.team.id}}">{{row.team.name}}</a>
+    </span>
+    <span title="playedGames">{{row.playedGames}}</span>
+    <span title="won">{{row.won}}</span>
+    <span title="draw">{{row.draw}}</span>
+    <span title="lost">{{row.lost}}</span>
+    <span title="points">{{row.points}}</span>
+    <span title="goalsFor">{{row.goalsFor}}</span>
+    <span title="goalsAgainst">{{row.goalsAgainst}}</span>
+    <span title="goalDifference">{{row.goalDifference}}</span>
+    <span title="goalDifference">{{row.goalDifference}}</span>
+    <span class="form" title="form">{{row.form}}</span>
+  </div>
+  <pre>
+</pre>
+</div>
 
