@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Team} from '../schemas';
 import {ActivatedRoute} from '@angular/router';
+import {config} from '../app-config';
 
 @Component({
   selector: 'app-team-page',
@@ -22,8 +23,8 @@ export class TeamPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get(
-      'https://api.football-data.org/v2/teams/' + this.id,
-      {headers: {'X-Auth-Token': 'edc03d7baf3c447dae90491ed7246598'}}
+      config.url + 'teams/' + this.id,
+      {headers: config.header}
     ).subscribe((team: Team) => this.team = team);
   }
 
