@@ -1,3 +1,6 @@
+[![Deploy to GitHub Pages via angular-cli-ghpages](https://github.com/azatmagdeev/azatmagdeev.github.io/actions/workflows/main.yml/badge.svg)](https://github.com/azatmagdeev/azatmagdeev.github.io/actions/workflows/main.yml)
+
+
 # Untitled
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
