@@ -38,7 +38,9 @@
     {{competition.area.name}}
     <img class="flag" *ngIf="competition.area.ensignUrl" src="{{competition.area.ensignUrl}}" alt="">
   </h3>
-
+  <a routerLink="/competitions/{{id}}/teams">
+    <h2>Teams</h2>
+  </a>
   <p *ngIf="competition.emblemUrl">
     <img class="emblem" src="{{competition.emblemUrl}}" alt="">
   </p>
@@ -85,9 +87,7 @@
     last update: {{competition.lastUpdated}}
   </p>
   <hr>
-  <a routerLink="/competitions/{{id}}/teams">
-    <p>Teams</p>
-  </a>
+
 </div>
 
 <div class="card" *ngFor="let standing of standings?.standings">

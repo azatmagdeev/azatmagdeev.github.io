@@ -56,6 +56,16 @@ export type Teams = {
   teams: Team[];
 };
 
+export type Player = {
+  id: number;
+  name: string;
+  position: 'Midfielder' | 'Goalkeeper' | 'Defender' | 'Attacker' | null;
+  dateOfBirth: string;
+  nationality: string;
+  shirtNumber: number | null;
+  role: 'PLAYER' | 'COACH'
+};
+
 export type Team = {
   id: number;
   area: Area;
@@ -71,6 +81,8 @@ export type Team = {
   clubColors: string;
   venue: string;
   lastUpdated: string
+  activeCompetitions: Competition[];
+  squad: Player[]
 };
 
 export type Standings = {

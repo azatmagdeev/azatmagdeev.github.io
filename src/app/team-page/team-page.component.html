@@ -1,4 +1,30 @@
-<p>team-page works!</p>
-<pre>
-  {{team|json}}
-</pre>
+<style>
+  .card {
+    background: white;
+    padding: 1em;
+  }
+</style>
+
+
+<div class="card">
+  <h1>{{team?.name}}</h1>
+  <p>{{team?.shortName}} ({{team.tla}}) {{team.area.name}}</p>
+  <p>
+    <img src="{{team.crestUrl}}" alt="">
+  </p>
+  <h3>Active Competitions:</h3>
+  <ul>
+    <li *ngFor="let competition of activeCompetitions">
+      <a routerLink="/competitions/{{competition.id}}">
+        {{competition.name}}
+      </a>
+    </li>
+  </ul>
+  <hr>
+  <h3>Squad:</h3>
+  <ul>
+    <li *ngFor="let player of team.squad">
+      {{player.name}}
+    </li>
+  </ul>
+</div>
