@@ -19,12 +19,21 @@ export type Competition = {
   seasons: Season[];
 };
 
-type Area = {
+export type Area = {
   id: number;
   name: string;
   countryCode: string;
   ensignUrl: string | null;
+  parentAreaId: number;
+  parentArea: string;
 };
+
+export type Areas = {
+  count: number,
+  filters: object,
+  areas: Area[]
+};
+
 
 type Season = {
   id: number
@@ -40,6 +49,7 @@ export type Teams = {
   filters: {
     season: string;
     stage: string;
+    areas: number[]
   };
   competition: Competition;
   season: Season;

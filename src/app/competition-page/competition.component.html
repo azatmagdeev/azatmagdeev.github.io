@@ -74,7 +74,7 @@
       current Matchday: {{season.currentMatchday}}
     </p>
     <p *ngIf="season.winner">
-      winner: <a href="/teams/{{season.winner.id}}">{{season.winner.name}}</a>
+      winner: <a routerLink="/teams/{{season.winner.id}}">{{season.winner.name}}</a>
     </p>
     ***
   </div>
@@ -85,33 +85,29 @@
     last update: {{competition.lastUpdated}}
   </p>
   <hr>
-  <a href="/competitions/{{id}}/teams">
+  <a routerLink="/competitions/{{id}}/teams">
     <p>Teams</p>
   </a>
 </div>
 
-
-
 <div class="card" *ngFor="let standing of standings?.standings">
-  <h2>{{standing.stage}} {{standing.type}} {{standing.group}}</h2>
-  <div class="table-row" *ngFor="let row of standing.table">
+    <h2>{{standing.stage}} {{standing.type}} {{standing.group}}</h2>
+    <div class="table-row" *ngFor="let row of standing.table">
     <span>
       {{row.position}}
     </span>
-    <span class="name">
-      <a href="/teams/{{row.team.id}}">{{row.team.name}}</a>
+      <span class="name">
+      <a routerLink="/teams/{{row.team.id}}">{{row.team.name}}</a>
     </span>
-    <span title="playedGames">{{row.playedGames}}</span>
-    <span title="won">{{row.won}}</span>
-    <span title="draw">{{row.draw}}</span>
-    <span title="lost">{{row.lost}}</span>
-    <span title="points">{{row.points}}</span>
-    <span title="goalsFor">{{row.goalsFor}}</span>
-    <span title="goalsAgainst">{{row.goalsAgainst}}</span>
-    <span title="goalDifference">{{row.goalDifference}}</span>
-    <span class="form" title="form">{{row.form}}</span>
-  </div>
-  <pre>
-</pre>
+      <span title="playedGames">{{row.playedGames}}</span>
+      <span title="won">{{row.won}}</span>
+      <span title="draw">{{row.draw}}</span>
+      <span title="lost">{{row.lost}}</span>
+      <span title="points">{{row.points}}</span>
+      <span title="goalsFor">{{row.goalsFor}}</span>
+      <span title="goalsAgainst">{{row.goalsAgainst}}</span>
+      <span title="goalDifference">{{row.goalDifference}}</span>
+      <span class="form" title="form">{{row.form}}</span>
+    </div>
 </div>
 

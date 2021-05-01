@@ -1,0 +1,48 @@
+
+<style>
+  .card {
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 1em;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 300px;
+  }
+
+  .card img {
+    width: 50%;
+    max-width: 450px;
+  }
+
+  .card p {
+    margin: 0;
+  }
+</style>
+<div class="card" >
+  <img *ngIf="team.crestUrl" src="{{team.crestUrl}}" alt="">
+
+  <div>
+    <a routerLink="/teams/{{team.id}}">
+      <h2>{{team.shortName}} ({{team.area.name}})</h2>
+    </a>
+    <p>{{team.name}} [{{team.tla}}]</p>
+    <hr>
+    <p>founded in {{team.founded}}</p>
+    <p>club colors: {{team.clubColors}}</p>
+    <p>venue: {{team.venue}}</p>
+    <!--      <hr>-->
+    <!--      <h3>Contacts:</h3>-->
+    <!--      <ul>-->
+    <!--        <li>{{team.phone}}</li>-->
+    <!--        <li>{{team.email}}</li>-->
+    <!--        <li>{{team.website}}</li>-->
+    <!--        <li>{{team.address}}</li>-->
+    <!--      </ul>-->
+    <!--      <hr>-->
+    <!--      <p>last update: {{team.lastUpdated}}</p>-->
+  </div>
+</div>

@@ -50,7 +50,7 @@
   <h1>Most popular football competitions</h1>
   <div class="card-desk">
     <div class="card" *ngFor="let competition of data?.competitions">
-      <a href="/competitions/{{competition.id}}">
+      <a routerLink="/competitions/{{competition.id}}">
         <h2>
           {{competition.name}}
         </h2>
