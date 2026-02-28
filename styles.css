@@ -62,6 +62,7 @@ body {
 }
 
 .hero-actions {
+  --control-height: 42px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -72,6 +73,8 @@ body {
 
 .lang-toggle {
   display: inline-flex;
+  align-items: stretch;
+  height: var(--control-height);
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
@@ -82,11 +85,17 @@ body {
   border: none;
   background: transparent;
   color: var(--text);
-  padding: 9px 11px;
+  height: var(--control-height);
+  min-height: var(--control-height);
+  padding: 0 12px;
+  line-height: 1;
   cursor: pointer;
   font-size: 13px;
   font-weight: 700;
   min-width: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .lang-btn + .lang-btn {
@@ -102,10 +111,16 @@ body {
   background: transparent;
   color: var(--text);
   border-radius: 10px;
-  padding: 9px 13px;
+  height: var(--control-height);
+  min-height: var(--control-height);
+  padding: 0 13px;
+  line-height: 1;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: background-color .2s ease, border-color .2s ease;
 }
 
@@ -118,11 +133,17 @@ body {
   background: transparent;
   color: var(--text);
   border-radius: 10px;
-  padding: 9px 13px;
+  height: var(--control-height);
+  min-height: var(--control-height);
+  padding: 0 13px;
+  line-height: 1;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
-  transition: background-color .2s ease, border-color .2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 
 .theme-toggle:hover {
@@ -189,6 +210,8 @@ li { margin: 7px 0; }
   
 .lang-toggle {
   display: inline-flex;
+  align-items: stretch;
+  height: var(--control-height);
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
@@ -199,11 +222,17 @@ li { margin: 7px 0; }
   border: none;
   background: transparent;
   color: var(--text);
-  padding: 9px 11px;
+  height: var(--control-height);
+  min-height: var(--control-height);
+  padding: 0 12px;
+  line-height: 1;
   cursor: pointer;
   font-size: 13px;
   font-weight: 700;
   min-width: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .lang-btn + .lang-btn {
@@ -219,10 +248,16 @@ li { margin: 7px 0; }
   background: transparent;
   color: var(--text);
   border-radius: 10px;
-  padding: 9px 13px;
+  height: var(--control-height);
+  min-height: var(--control-height);
+  padding: 0 13px;
+  line-height: 1;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: background-color .2s ease, border-color .2s ease;
 }
 
@@ -263,4 +298,42 @@ li { margin: 7px 0; }
     color: #000 !important;
     text-decoration: none !important;
   }
+}
+
+
+body:not([data-theme]),
+body[data-theme="dark"] {
+  --control-bg: rgba(30, 41, 59, 0.85);
+  --control-border: #334155;
+  --control-shadow: 0 4px 14px rgba(2, 6, 23, 0.45);
+}
+
+body[data-theme="light"] {
+  --control-bg: rgba(255, 255, 255, 0.95);
+  --control-border: #cbd5e1;
+  --control-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+}
+
+.hero-actions .lang-toggle,
+.hero-actions .pdf-btn,
+.hero-actions .theme-toggle {
+  background: var(--control-bg);
+  border-color: var(--control-border);
+  box-shadow: var(--control-shadow);
+}
+
+.hero-actions .lang-btn.active {
+  background: rgba(56, 189, 248, 0.28);
+}
+
+.hero-actions .pdf-btn:hover,
+.hero-actions .theme-toggle:hover,
+.hero-actions .lang-btn:hover {
+  background: rgba(148, 163, 184, 0.22);
+}
+
+.hero-actions .pdf-btn:active,
+.hero-actions .theme-toggle:active,
+.hero-actions .lang-btn:active {
+  transform: translateY(1px);
 }
