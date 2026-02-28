@@ -1,18 +1,36 @@
 :root {
   --bg: #0f172a;
-  --card: #111827;
+  --bg-gradient-start: #0b1220;
+  --bg-gradient-end: #0f172a;
+  --card: rgba(17, 24, 39, 0.9);
   --text: #e5e7eb;
   --muted: #9ca3af;
   --accent: #22c55e;
   --border: #1f2937;
+  --link: #93c5fd;
+  --h2: #ffffff;
+}
+
+body[data-theme="light"] {
+  --bg: #f3f4f6;
+  --bg-gradient-start: #f9fafb;
+  --bg-gradient-end: #e5e7eb;
+  --card: rgba(255, 255, 255, 0.92);
+  --text: #111827;
+  --muted: #4b5563;
+  --accent: #15803d;
+  --border: #d1d5db;
+  --link: #1d4ed8;
+  --h2: #0f172a;
 }
 
 * { box-sizing: border-box; }
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
+  background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
   color: var(--text);
+  transition: background-color .2s, color .2s;
 }
 
 .container {
@@ -22,7 +40,7 @@ body {
 }
 
 .card {
-  background: rgba(17, 24, 39, 0.9);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 18px 20px;
@@ -36,9 +54,25 @@ body {
   align-items: flex-start;
 }
 
+.hero-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.theme-toggle {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
 h1, h2, h3 { margin: 0 0 10px; }
 h1 { font-size: 32px; }
-h2 { font-size: 20px; color: #fff; }
+h2 { font-size: 20px; color: var(--h2); }
 h3 { font-size: 16px; }
 
 .role { color: var(--accent); margin: 0 0 6px; }
@@ -50,7 +84,7 @@ h3 { font-size: 16px; }
   text-align: right;
 }
 
-a { color: #93c5fd; text-decoration: none; }
+a { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 .grid {
@@ -72,4 +106,5 @@ li { margin: 6px 0; }
   .hero { flex-direction: column; }
   .contacts { text-align: left; }
   .grid { grid-template-columns: 1fr; }
+  .hero-actions { justify-content: flex-start; }
 }
