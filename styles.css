@@ -64,7 +64,37 @@ body {
 .hero-actions {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 8px;
+}
+
+
+.lang-toggle {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  padding: 9px 11px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  min-width: 42px;
+}
+
+.lang-btn + .lang-btn {
+  border-left: 1px solid var(--border);
+}
+
+.lang-btn.active {
+  background: rgba(148, 163, 184, 0.2);
 }
 
 .theme-toggle {
@@ -135,11 +165,40 @@ li { margin: 7px 0; }
   .grid { grid-template-columns: 1fr; }
   .hero-actions {
     justify-content: flex-start;
+    flex-wrap: wrap;
     position: sticky;
     top: 8px;
     z-index: 10;
   }
-  .theme-toggle {
+  
+.lang-toggle {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  padding: 9px 11px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  min-width: 42px;
+}
+
+.lang-btn + .lang-btn {
+  border-left: 1px solid var(--border);
+}
+
+.lang-btn.active {
+  background: rgba(148, 163, 184, 0.2);
+}
+
+.theme-toggle {
     background: var(--card);
     backdrop-filter: blur(4px);
   }

@@ -10,13 +10,18 @@
 <body>
   <main class="container">
     <div class="hero-actions">
+      <div class="lang-toggle" role="group" aria-label="Language switcher">
+        <button id="langRu" class="lang-btn active" type="button">RU</button>
+        <button id="langEn" class="lang-btn" type="button">EN</button>
+      </div>
       <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark</button>
     </div>
+
     <header class="card hero">
       <div>
-        <h1>Азат Магдеев</h1>
-        <p class="role">Fullstack-разработчик · React / TypeScript / Node.js / PHP</p>
-        <p class="muted">Казань · готов к переезду · готов к редким командировкам</p>
+        <h1 id="name">Азат Магдеев</h1>
+        <p id="role" class="role">Fullstack-разработчик · React / TypeScript / Node.js / PHP</p>
+        <p id="location" class="muted">Казань · готов к переезду · готов к редким командировкам</p>
       </div>
       <div class="contacts">
         <a href="tel:+79600440765">+7 960 044-07-65</a>
@@ -26,114 +31,237 @@
     </header>
 
     <section class="card">
-      <h2>Коротко обо мне</h2>
-      <p>
+      <h2 id="aboutTitle">Коротко обо мне</h2>
+      <p id="aboutText">
         Разрабатываю и развиваю веб-продукты для B2B: от фич и интеграций до поддержки продакшна.
         Сильные стороны: быстро вхожу в легаси, аккуратно рефакторю, повышаю стабильность и помогаю команде расти.
       </p>
       <ul>
-        <li>5+ лет в коммерческой разработке (fullstack + продуктовая поддержка)</li>
-        <li>Опыт code review, e2e-тестов, онбординга junior/стажёров</li>
-        <li>Гибко подключаюсь: full-time / part-time / проектно</li>
+        <li id="aboutLi1">5+ лет в коммерческой разработке (fullstack + продуктовая поддержка)</li>
+        <li id="aboutLi2">Опыт code review, e2e-тестов, онбординга junior/стажёров</li>
+        <li id="aboutLi3">Гибко подключаюсь: full-time / part-time / проектно</li>
       </ul>
     </section>
 
     <section class="card">
-      <h2>Чем могу быть полезен бизнесу</h2>
+      <h2 id="valueTitle">Чем могу быть полезен бизнесу</h2>
       <ul>
-        <li><b>Ускоряю delivery:</b> беру задачи «под ключ» и довожу до продакшна без лишней бюрократии.</li>
-        <li><b>Снижаю риски:</b> закрываю баги в UI и бизнес-логике, улучшаю предсказуемость релизов.</li>
-        <li><b>Улучшаю поддерживаемость:</b> рефакторинг легаси-кода и выравнивание качества в команде.</li>
-        <li><b>Автоматизирую рутину:</b> отчёты, интеграции, сервисные скрипты и внутренние инструменты.</li>
+        <li id="valueLi1"><b>Ускоряю delivery:</b> беру задачи «под ключ» и довожу до продакшна без лишней бюрократии.</li>
+        <li id="valueLi2"><b>Снижаю риски:</b> закрываю баги в UI и бизнес-логике, улучшаю предсказуемость релизов.</li>
+        <li id="valueLi3"><b>Улучшаю поддерживаемость:</b> рефакторинг легаси-кода и выравнивание качества в команде.</li>
+        <li id="valueLi4"><b>Автоматизирую рутину:</b> отчёты, интеграции, сервисные скрипты и внутренние инструменты.</li>
       </ul>
     </section>
 
     <section class="card">
-      <h2>Опыт работы</h2>
+      <h2 id="expTitle">Опыт работы</h2>
 
       <article>
-        <h3>Программист — Дельтаинком, ЦИТ (Казань)</h3>
-        <p class="muted">Август 2022 — настоящее время</p>
+        <h3 id="exp1Title">Программист — Дельтаинком, ЦИТ (Казань)</h3>
+        <p id="exp1Date" class="muted">Август 2022 — настоящее время</p>
         <ul>
-          <li>Разрабатываю новый функционал на React, TypeScript, Node.js и PHP.</li>
-          <li>Провожу code review, внедряю e2e-подходы к проверке ключевых сценариев.</li>
-          <li>Менторю стажёров и junior-разработчиков, ускоряю их выход на продуктивность.</li>
-          <li>Рефакторю легаси-модули, повышая читаемость и скорость внесения изменений.</li>
+          <li id="exp1Li1">Разрабатываю новый функционал на React, TypeScript, Node.js и PHP.</li>
+          <li id="exp1Li2">Провожу code review, внедряю e2e-подходы к проверке ключевых сценариев.</li>
+          <li id="exp1Li3">Менторю стажёров и junior-разработчиков, ускоряю их выход на продуктивность.</li>
+          <li id="exp1Li4">Рефакторю легаси-модули, повышая читаемость и скорость внесения изменений.</li>
         </ul>
       </article>
 
       <article>
-        <h3>Младший программист / Программист техподдержки — Дельтаинком, ЦИТ</h3>
-        <p class="muted">Июль 2020 — Июль 2022</p>
+        <h3 id="exp2Title">Младший программист / Программист техподдержки — Дельтаинком, ЦИТ</h3>
+        <p id="exp2Date" class="muted">Июль 2020 — Июль 2022</p>
         <ul>
-          <li>Оперативно исправлял ошибки в интерфейсе и бизнес-логике веб-приложений.</li>
-          <li>Дорабатывал функционал по запросам пользователей (JavaScript, PHP, MySQL).</li>
+          <li id="exp2Li1">Оперативно исправлял ошибки в интерфейсе и бизнес-логике веб-приложений.</li>
+          <li id="exp2Li2">Дорабатывал функционал по запросам пользователей (JavaScript, PHP, MySQL).</li>
         </ul>
       </article>
 
       <article>
-        <h3>Веб-разработчик (фриланс) — Work-Zilla</h3>
-        <p class="muted">Апрель 2020 — Октябрь 2020</p>
+        <h3 id="exp3Title">Веб-разработчик (фриланс) — Work-Zilla</h3>
+        <p id="exp3Date" class="muted">Апрель 2020 — Октябрь 2020</p>
         <ul>
-          <li>Делал виджеты, мини-сервисы, правки и интеграции для клиентских сайтов.</li>
-          <li>Работал в условиях коротких дедлайнов и разнообразных бизнес-задач.</li>
+          <li id="exp3Li1">Делал виджеты, мини-сервисы, правки и интеграции для клиентских сайтов.</li>
+          <li id="exp3Li2">Работал в условиях коротких дедлайнов и разнообразных бизнес-задач.</li>
         </ul>
       </article>
     </section>
 
     <section class="grid">
       <section class="card">
-        <h2>Ключевые навыки</h2>
+        <h2 id="skillsTitle">Ключевые навыки</h2>
         <ul>
           <li>JavaScript, TypeScript, Node.js, React</li>
           <li>PHP, SQL, MySQL, REST API, Ajax</li>
           <li>HTML5, CSS3, Bootstrap, jQuery</li>
-          <li>Git, Linux, поддержка и развитие веб-продуктов</li>
+          <li id="skillsLi4">Git, Linux, поддержка и развитие веб-продуктов</li>
+          <li id="skillsLi5">AI-assisted development: rapid prototyping, prompt workflows, ускорение delivery</li>
         </ul>
       </section>
 
       <section class="card">
-        <h2>Обучение и развитие</h2>
+        <h2 id="eduTitle">Обучение и развитие</h2>
         <ul>
-          <li>2019 — «Программирование на JavaScript», ИТ-академия</li>
-          <li>2020 — Хакатон «Цифровой прорыв», 4 место в составе команды</li>
-          <li>2022 — «DevOps-инженер», ИТ-академия</li>
+          <li id="eduLi1">2019 — «Программирование на JavaScript», ИТ-академия</li>
+          <li id="eduLi2">2020 — Хакатон «Цифровой прорыв», 4 место в составе команды</li>
+          <li id="eduLi3">2022 — «DevOps-инженер», ИТ-академия</li>
         </ul>
       </section>
     </section>
 
     <section class="card">
-      <h2>Формат сотрудничества</h2>
-      <p>
+      <h2 id="formatTitle">Формат сотрудничества</h2>
+      <p id="formatText">
         Рассматриваю full-time, part-time и проектную работу.
         Быстро включаюсь в процессы, прозрачно коммуницирую и фокусируюсь на результате для продукта и команды.
       </p>
     </section>
 
     <footer class="footer">
-      <p>Резюме · <span id="year"></span></p>
+      <p><span id="footerLabel">Резюме</span> · <span id="year"></span></p>
     </footer>
   </main>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const i18n = {
+      ru: {
+        pageTitle: 'Азат Магдеев — Fullstack-разработчик',
+        metaDescription: 'Fullstack-разработчик: React, TypeScript, Node.js, PHP. Ускоряю разработку, стабилизирую продукт, внедряю автоматизацию.',
+        role: 'Fullstack-разработчик · React / TypeScript / Node.js / PHP',
+        location: 'Казань · готов к переезду · готов к редким командировкам',
+        aboutTitle: 'Коротко обо мне',
+        aboutText: 'Разрабатываю и развиваю веб-продукты для B2B: от фич и интеграций до поддержки продакшна. Сильные стороны: быстро вхожу в легаси, аккуратно рефакторю, повышаю стабильность и помогаю команде расти.',
+        aboutLi1: '5+ лет в коммерческой разработке (fullstack + продуктовая поддержка)',
+        aboutLi2: 'Опыт code review, e2e-тестов, онбординга junior/стажёров',
+        aboutLi3: 'Гибко подключаюсь: full-time / part-time / проектно',
+        valueTitle: 'Чем могу быть полезен бизнесу',
+        valueLi1: '<b>Ускоряю delivery:</b> беру задачи «под ключ» и довожу до продакшна без лишней бюрократии.',
+        valueLi2: '<b>Снижаю риски:</b> закрываю баги в UI и бизнес-логике, улучшаю предсказуемость релизов.',
+        valueLi3: '<b>Улучшаю поддерживаемость:</b> рефакторинг легаси-кода и выравнивание качества в команде.',
+        valueLi4: '<b>Автоматизирую рутину:</b> отчёты, интеграции, сервисные скрипты и внутренние инструменты.',
+        expTitle: 'Опыт работы',
+        exp1Title: 'Программист — Дельтаинком, ЦИТ (Казань)',
+        exp1Date: 'Август 2022 — настоящее время',
+        exp1Li1: 'Разрабатываю новый функционал на React, TypeScript, Node.js и PHP.',
+        exp1Li2: 'Провожу code review, внедряю e2e-подходы к проверке ключевых сценариев.',
+        exp1Li3: 'Менторю стажёров и junior-разработчиков, ускоряю их выход на продуктивность.',
+        exp1Li4: 'Рефакторю легаси-модули, повышая читаемость и скорость внесения изменений.',
+        exp2Title: 'Младший программист / Программист техподдержки — Дельтаинком, ЦИТ',
+        exp2Date: 'Июль 2020 — Июль 2022',
+        exp2Li1: 'Оперативно исправлял ошибки в интерфейсе и бизнес-логике веб-приложений.',
+        exp2Li2: 'Дорабатывал функционал по запросам пользователей (JavaScript, PHP, MySQL).',
+        exp3Title: 'Веб-разработчик (фриланс) — Work-Zilla',
+        exp3Date: 'Апрель 2020 — Октябрь 2020',
+        exp3Li1: 'Делал виджеты, мини-сервисы, правки и интеграции для клиентских сайтов.',
+        exp3Li2: 'Работал в условиях коротких дедлайнов и разнообразных бизнес-задач.',
+        skillsTitle: 'Ключевые навыки',
+        skillsLi4: 'Git, Linux, поддержка и развитие веб-продуктов',
+        skillsLi5: 'AI-assisted development: rapid prototyping, prompt workflows, ускорение delivery',
+        eduTitle: 'Обучение и развитие',
+        eduLi1: '2019 — «Программирование на JavaScript», ИТ-академия',
+        eduLi2: '2020 — Хакатон «Цифровой прорыв», 4 место в составе команды',
+        eduLi3: '2022 — «DevOps-инженер», ИТ-академия',
+        formatTitle: 'Формат сотрудничества',
+        formatText: 'Рассматриваю full-time, part-time и проектную работу. Быстро включаюсь в процессы, прозрачно коммуницирую и фокусируюсь на результате для продукта и команды.',
+        footerLabel: 'Резюме',
+      },
+      en: {
+        pageTitle: 'Azat Magdeev — Fullstack Developer',
+        metaDescription: 'Fullstack Developer: React, TypeScript, Node.js, PHP. I speed up delivery, improve stability, and automate workflows.',
+        role: 'Fullstack Developer · React / TypeScript / Node.js / PHP',
+        location: 'Kazan · open to relocation · open to occasional business trips',
+        aboutTitle: 'About me',
+        aboutText: 'I build and evolve B2B web products: from new features and integrations to production support. Strong sides: quick legacy onboarding, careful refactoring, stability improvements, and team support.',
+        aboutLi1: '5+ years of commercial development (fullstack + product support)',
+        aboutLi2: 'Experience with code review, e2e testing, and junior intern onboarding',
+        aboutLi3: 'Flexible engagement: full-time / part-time / contract',
+        valueTitle: 'How I create business value',
+        valueLi1: '<b>Faster delivery:</b> I take tasks end-to-end and ship to production with minimal overhead.',
+        valueLi2: '<b>Lower risk:</b> I fix UI and business-logic issues and improve release predictability.',
+        valueLi3: '<b>Better maintainability:</b> I refactor legacy code and raise code quality across the team.',
+        valueLi4: '<b>Automation:</b> reports, integrations, service scripts, and internal tools.',
+        expTitle: 'Work Experience',
+        exp1Title: 'Software Developer — Deltaincom, CIT (Kazan)',
+        exp1Date: 'August 2022 — Present',
+        exp1Li1: 'Developing new features with React, TypeScript, Node.js, and PHP.',
+        exp1Li2: 'Running code reviews and introducing e2e approaches for key user flows.',
+        exp1Li3: 'Mentoring interns and junior developers to speed up ramp-up.',
+        exp1Li4: 'Refactoring legacy modules to improve readability and change speed.',
+        exp2Title: 'Junior Developer / Support Developer — Deltaincom, CIT',
+        exp2Date: 'July 2020 — July 2022',
+        exp2Li1: 'Fixed UI and business-logic issues in production web apps.',
+        exp2Li2: 'Delivered feature updates based on user requests (JavaScript, PHP, MySQL).',
+        exp3Title: 'Freelance Web Developer — Work-Zilla',
+        exp3Date: 'April 2020 — October 2020',
+        exp3Li1: 'Built widgets, mini-services, website updates, and integrations.',
+        exp3Li2: 'Worked under tight deadlines with diverse business tasks.',
+        skillsTitle: 'Key Skills',
+        skillsLi4: 'Git, Linux, web product support and evolution',
+        skillsLi5: 'AI-assisted development: rapid prototyping, prompt workflows, faster delivery',
+        eduTitle: 'Education & Growth',
+        eduLi1: '2019 — JavaScript Programming, IT Academy',
+        eduLi2: '2020 — Digital Breakthrough Hackathon, team finished 4th',
+        eduLi3: '2022 — DevOps Engineer, IT Academy',
+        formatTitle: 'Engagement Format',
+        formatText: 'Open to full-time, part-time, and contract work. I onboard quickly, communicate transparently, and focus on product impact.',
+        footerLabel: 'Resume',
+      }
+    };
 
-    const STORAGE_KEY = 'resume-theme';
-    const button = document.getElementById('themeToggle');
+    const THEME_KEY = 'resume-theme';
+    const LANG_KEY = 'resume-lang';
+
+    const themeBtn = document.getElementById('themeToggle');
+    const langRuBtn = document.getElementById('langRu');
+    const langEnBtn = document.getElementById('langEn');
 
     function applyTheme(theme) {
       document.body.setAttribute('data-theme', theme);
-      button.textContent = theme === 'light' ? '🌙 Dark' : '☀️ Light';
+      themeBtn.textContent = theme === 'light' ? '🌙 Dark' : '☀️ Light';
     }
 
-    const savedTheme = localStorage.getItem(STORAGE_KEY) || 'dark';
+    function applyLang(lang) {
+      const t = i18n[lang] || i18n.ru;
+      document.documentElement.lang = lang;
+      document.title = t.pageTitle;
+      document.querySelector('meta[name="description"]').setAttribute('content', t.metaDescription);
+
+      Object.entries(t).forEach(([key, value]) => {
+        const el = document.getElementById(key);
+        if (!el) return;
+        if (value.includes && value.includes('<b>')) {
+          el.innerHTML = value;
+        } else {
+          el.textContent = value;
+        }
+      });
+
+      langRuBtn.classList.toggle('active', lang === 'ru');
+      langEnBtn.classList.toggle('active', lang === 'en');
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
     applyTheme(savedTheme);
 
-    button.addEventListener('click', () => {
+    const savedLang = localStorage.getItem(LANG_KEY) || 'ru';
+    applyLang(savedLang);
+
+    themeBtn.addEventListener('click', () => {
       const current = document.body.getAttribute('data-theme') || 'dark';
       const next = current === 'dark' ? 'light' : 'dark';
-      localStorage.setItem(STORAGE_KEY, next);
+      localStorage.setItem(THEME_KEY, next);
       applyTheme(next);
+    });
+
+    langRuBtn.addEventListener('click', () => {
+      localStorage.setItem(LANG_KEY, 'ru');
+      applyLang('ru');
+    });
+
+    langEnBtn.addEventListener('click', () => {
+      localStorage.setItem(LANG_KEY, 'en');
+      applyLang('en');
     });
   </script>
 </body>
