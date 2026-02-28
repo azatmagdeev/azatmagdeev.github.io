@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Азат Магдеев — Резюме</title>
+  <meta name="description" content="Резюме Азата Магдеева: опыт, навыки, проекты, контакты." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="card hero">
+      <div>
+        <h1>Азат Магдеев</h1>
+        <p class="role">Full‑Stack Developer / Automation Engineer</p>
+        <p class="muted">Москва · Remote / Office</p>
+      </div>
+      <div class="contacts">
+        <a href="mailto:you@example.com">you@example.com</a>
+        <a href="tel:+70000000000">+7 (000) 000‑00‑00</a>
+        <a href="https://github.com/azatmagdeev" target="_blank" rel="noreferrer">github.com/azatmagdeev</a>
+        <a href="https://t.me/username" target="_blank" rel="noreferrer">t.me/username</a>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2>Обо мне</h2>
+      <p>
+        Разрабатываю веб‑приложения и автоматизирую бизнес‑процессы: от интерфейсов до интеграций и деплоя.
+        Фокус: скорость, надёжность, понятный UX и measurable impact.
+      </p>
+    </section>
+
+    <section class="grid">
+      <section class="card">
+        <h2>Навыки</h2>
+        <ul>
+          <li>JavaScript / TypeScript, React, Node.js</li>
+          <li>PHP, REST API, SQL (PostgreSQL/MySQL)</li>
+          <li>Automation: Telegram bots, scripts, integrations</li>
+          <li>Git, CI/CD, Docker (базово), Linux/macOS</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Стек и инструменты</h2>
+        <ul>
+          <li>React, Vite/CRA, Express/Nest (по задаче)</li>
+          <li>GitHub Actions, Nginx, PM2</li>
+          <li>OpenAI / Gemini API, prompt pipelines</li>
+          <li>Figma (handoff), Postman, Jest</li>
+        </ul>
+      </section>
+    </section>
+
+    <section class="card">
+      <h2>Опыт</h2>
+      <article>
+        <h3>Full‑Stack Developer — Freelance</h3>
+        <p class="muted">2022 — настоящее время</p>
+        <ul>
+          <li>Собирал веб‑сервисы и внутренние инструменты для малого бизнеса.</li>
+          <li>Автоматизировал отчёты, уведомления и рутинные операции (экономия времени команды).</li>
+          <li>Поднимал проекты от идеи до продакшна, включая поддержку и улучшения.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Проекты</h2>
+      <article>
+        <h3>PassGen</h3>
+        <p>Генератор паролей с читаемым режимом, гибкой настройкой и деплоем на GitHub Pages.</p>
+      </article>
+      <article>
+        <h3>Automation helpers</h3>
+        <p>Набор скриптов/ботов для операционных задач: мониторинг, отчёты, напоминания.</p>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Образование</h2>
+      <p>Добавь здесь вуз/курсы/сертификаты.</p>
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Азат Магдеев</p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
