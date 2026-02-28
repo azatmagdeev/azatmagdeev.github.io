@@ -97,6 +97,22 @@ body {
   background: rgba(148, 163, 184, 0.2);
 }
 
+.pdf-btn {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 9px 13px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color .2s ease, border-color .2s ease;
+}
+
+.pdf-btn:hover {
+  background: rgba(148, 163, 184, 0.12);
+}
+
 .theme-toggle {
   border: 1px solid var(--border);
   background: transparent;
@@ -198,6 +214,22 @@ li { margin: 7px 0; }
   background: rgba(148, 163, 184, 0.2);
 }
 
+.pdf-btn {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 9px 13px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color .2s ease, border-color .2s ease;
+}
+
+.pdf-btn:hover {
+  background: rgba(148, 163, 184, 0.12);
+}
+
 .theme-toggle {
     background: var(--card);
     backdrop-filter: blur(4px);
@@ -210,4 +242,25 @@ li { margin: 7px 0; }
   h1 { font-size: 28px; }
   h2 { font-size: 18px; }
   p, li, a, .muted { font-size: 15px; line-height: 1.45; }
+}
+
+
+@media print {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .hero-actions {
+    display: none !important;
+  }
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
 }

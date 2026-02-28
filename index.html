@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Азат Магдеев — Fullstack-разработчик</title>
   <meta name="description" content="Fullstack-разработчик: React, TypeScript, Node.js, PHP. Ускоряю разработку, стабилизирую продукт, внедряю автоматизацию." />
+  <meta name="yandex-verification" content="106b10dd401bf12c" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -14,6 +15,7 @@
         <button id="langRu" class="lang-btn active" type="button">RU</button>
         <button id="langEn" class="lang-btn" type="button">EN</button>
       </div>
+      <button id="pdfBtn" class="pdf-btn" type="button">📄 PDF</button>
       <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark</button>
     </div>
 
@@ -124,6 +126,7 @@
   <script>
     const i18n = {
       ru: {
+        name: 'Азат Магдеев',
         pageTitle: 'Азат Магдеев — Fullstack-разработчик',
         metaDescription: 'Fullstack-разработчик: React, TypeScript, Node.js, PHP. Ускоряю разработку, стабилизирую продукт, внедряю автоматизацию.',
         role: 'Fullstack-разработчик · React / TypeScript / Node.js / PHP',
@@ -163,8 +166,10 @@
         formatTitle: 'Формат сотрудничества',
         formatText: 'Рассматриваю full-time, part-time и проектную работу. Быстро включаюсь в процессы, прозрачно коммуницирую и фокусируюсь на результате для продукта и команды.',
         footerLabel: 'Резюме',
+        pdfLabel: '📄 PDF',
       },
       en: {
+        name: 'Azat Magdeev',
         pageTitle: 'Azat Magdeev — Fullstack Developer',
         metaDescription: 'Fullstack Developer: React, TypeScript, Node.js, PHP. I speed up delivery, improve stability, and automate workflows.',
         role: 'Fullstack Developer · React / TypeScript / Node.js / PHP',
@@ -204,6 +209,7 @@
         formatTitle: 'Engagement Format',
         formatText: 'Open to full-time, part-time, and contract work. I onboard quickly, communicate transparently, and focus on product impact.',
         footerLabel: 'Resume',
+        pdfLabel: '📄 PDF',
       }
     };
 
@@ -224,6 +230,8 @@
       document.documentElement.lang = lang;
       document.title = t.pageTitle;
       document.querySelector('meta[name="description"]').setAttribute('content', t.metaDescription);
+
+      document.getElementById('pdfBtn').textContent = t.pdfLabel || '📄 PDF';
 
       Object.entries(t).forEach(([key, value]) => {
         const el = document.getElementById(key);
@@ -246,6 +254,10 @@
 
     const savedLang = localStorage.getItem(LANG_KEY) || 'ru';
     applyLang(savedLang);
+
+    document.getElementById('pdfBtn').addEventListener('click', () => {
+      window.print();
+    });
 
     themeBtn.addEventListener('click', () => {
       const current = document.body.getAttribute('data-theme') || 'dark';
