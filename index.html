@@ -15,6 +15,7 @@
   <meta name="twitter:title" content="Азат Магдеев — Fullstack-разработчик" />
   <meta name="twitter:description" content="React, TypeScript, Node.js, PHP. Разработка и развитие B2B веб-продуктов." />
   <meta name="yandex-verification" content="106b10dd401bf12c" />
+  <link id="siteFavicon" rel="icon" type="image/svg+xml" href="assets/favicons/favicon-a-caret.svg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -263,6 +264,16 @@
 
     const savedLang = localStorage.getItem(LANG_KEY) || 'ru';
     applyLang(savedLang);
+
+    // Favicon caret blink (simple, lightweight)
+    const faviconEl = document.getElementById('siteFavicon');
+    const favOn = 'assets/favicons/favicon-a-caret.svg';
+    const favOff = 'assets/favicons/favicon-a-caret-off.svg';
+    let favState = true;
+    setInterval(() => {
+      favState = !favState;
+      if (faviconEl) faviconEl.href = favState ? favOn : favOff;
+    }, 900);
 
     document.getElementById('pdfBtn').addEventListener('click', () => {
       window.print();
